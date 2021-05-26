@@ -11,3 +11,24 @@ p{
 	font-size: 25px;
 	margin-left: 480px;
 }
+
+.App-logo {
+  height: 40vmin;
+  margin-left: 475px;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
