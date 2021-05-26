@@ -6,7 +6,7 @@ const WelcomePage = () => {
 		<div className="welcomeForm">
 		<label> Username : </label>
 		<input type="text" /><br/>
-		<input type="button" value="Let's Begin"/>
+		<button> Let's Begin </button>
 		</div>
 		)
 }

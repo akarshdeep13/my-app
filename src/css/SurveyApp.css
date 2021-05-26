@@ -1,9 +1,13 @@
+@import url(https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap);
+
 h2{
-	font-family: sans-serif;
+	font-family: 'Odibee Sans';
+	font-size: 40px;
 	margin-left: 500px;
 }
 
 p{
-	font-family: sans-serif;
+	font-family: 'Odibee Sans';
+	font-size: 25px;
 	margin-left: 480px;
 }

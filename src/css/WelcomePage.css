@@ -1,5 +1,21 @@
+@import url(https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap);
+
 .welcomeForm {
-	margin-left: 300px;
+	margin-left: 280px;
 	background-color: aquamarine;
-	max-width: 50%;
+	width: 50%;
+}
+
+label{
+	font-family: 'Odibee Sans';
+	font-size: 25px;
+	margin-left: 150px;
+}
+
+button{
+	font-family: 'Odibee Sans';
+	font-size: 20px;
+	margin-top: 20px;
+	margin-left: 250px;
+	width: 100px;
 }
