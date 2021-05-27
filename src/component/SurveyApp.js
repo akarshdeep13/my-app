@@ -9,9 +9,10 @@ const SurveyApp = () => {
 		<h2>Survey App</h2>
 		<img src={logo} className="App-logo" alt="logo" />
 		<p>Welcome user to Survey</p>
-		<WelcomePage/>
+			<WelcomePage/>
 		</div>
 		)
 }
+
 
 export default SurveyApp;
