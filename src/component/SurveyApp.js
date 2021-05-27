@@ -1,7 +1,7 @@
 import React from 'react';
 import WelcomePage from './WelcomePage';
-import './css/SurveyApp.css';
-import logo from './images/logo.png';
+import '../css/SurveyApp.css';
+import logo from '../images/logo.png';
 
 const SurveyApp = () => {
 	return (

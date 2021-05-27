@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import SurveyApp from './SurveyApp';
+import SurveyApp from './component/SurveyApp';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
