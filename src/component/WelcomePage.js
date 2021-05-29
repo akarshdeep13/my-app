@@ -7,12 +7,9 @@ const WelcomePage = () => {
 		return(
 			<div className="welcomeForm">
 				
-				<FormContainer userName={setUserName} />
+				<FormContainer/>
 		</div>
 			) 
-}
-const setUserName = (text) => {
-	console.log(text);
 }
 
 export default WelcomePage;

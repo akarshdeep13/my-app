@@ -1,20 +1,24 @@
 import React, { useState } from 'react';
-import '../css/WelcomePage.css'
+import '../css/WelcomePage.css';
 
-const FormContainer = (props) => {
+const FormContainer = () => {
 	const [userName, setUserName] = useState('');
+	const [name, setName] = useState('');
 	const proceed = (e) => {
 		e.preventDefault();
 		if (!userName) {
 			alert('Please enter user name');
 			return
 		}
-		props.userName({ userName });
+		setName('Hi '+userName);
+		console.log(name);
 		setUserName('');
+
 	}
 
 	return (
 		<div>
+			<h1>{name}</h1>
 			<label> Username : </label>
 			<input type="text" value={userName} onChange={(e) => setUserName(e.target.value)} /><br />
 			<button onClick={proceed}> Let's Begin </button>
@@ -22,5 +26,7 @@ const FormContainer = (props) => {
 		)
 
 }
+
+
 
 export default FormContainer;
