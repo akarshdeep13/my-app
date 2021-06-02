@@ -5,7 +5,9 @@ const Test = (props) => {
 
     const [data, setData] = useState([]);
     const [status, setStatus] = useState(1);
-    var [index, setIndex] = useState(0);
+    const [radioValue, setRadioValue] = useState('');
+    const [index, setIndex] = useState(0);
+    const [score, setScore] = useState(0);
     const url = 'https://next.json-generator.com/api/json/get/N1NR3Py5c';
 
 
@@ -18,16 +20,21 @@ const Test = (props) => {
         const questions = await response.json();
         setData(questions.results);
         setStatus(questions.response_code)
-    };
+    }
 
-    const nextQuestion = () => {
+    const nextQuestion = (e) => {
         if (index < data.length) {
-            setIndex(++index);
+            if (radioValue === data[index].correct_answer) {
+                setScore(prevScore => prevScore+1);
+            }
+            setIndex(prevIndex => prevIndex + 1);
         }
         else {
-            console.log("Ho gya bhai kitna kroge");
         }
     }
+
+
+
     if (status===1) {
         return (
             <h1>Loading....</h1>)
@@ -39,12 +46,12 @@ const Test = (props) => {
                 <div>
                     <h4>Category::{data[index].category}</h4>
                     <p>{data[index].question}</p>
-                    <input type="radio" name="options" value={data[index].correct_answer} />
+                    <input type="radio" name="options" value={data[index].correct_answer} onChange={(e) => setRadioValue(e.target.value)} />
                     <label>{data[index].correct_answer}</label><br />
 
                     {data[index].incorrect_answers.map((option) => {
                         return <>
-                            <input type="radio" name="options" value={option} />
+                            <input type="radio" name="options" value={option} onChange={(e) => setRadioValue(e.target.value)}  />
                             <label>{option}</label><br />
                         </>
                     })}
@@ -54,7 +61,7 @@ const Test = (props) => {
         )
     }
     else if (index >= data.length) {
-        return <Result/>
+        return <Result total={data.length} yourScore={score}/>
     }
     
 }
