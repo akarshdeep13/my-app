@@ -7,8 +7,8 @@ const SurveyApp = () => {
 	return (
 		<>
 		<img src={logo} className="App-logo" alt="logo" />
-		<h2 className="title">Survey App</h2>
-		<p className="introText">Welcome user to Survey</p>
+		<h2 className="title">Quiz App</h2>
+		<p className="introText">Welcome user, Let's Play Quiz</p>
 			<WelcomePage/>
 		</>
 		)
