@@ -6,6 +6,7 @@ const Test = (props) => {
     const [data, setData] = useState([]);
     const [status, setStatus] = useState(1);
     const [radioValue, setRadioValue] = useState('');
+    
     const [index, setIndex] = useState(0);
     const [score, setScore] = useState(0);
     const url = 'https://next.json-generator.com/api/json/get/N1NR3Py5c';
@@ -13,48 +14,53 @@ const Test = (props) => {
 
     useEffect(() => {
         getQuiz();
-    }, [])
+    },[])
 
     const getQuiz = async () => {
         const response = await fetch(url);
         const questions = await response.json();
         setData(questions.results);
-        setStatus(questions.response_code)
+        setStatus(questions.response_code);
     }
 
     const nextQuestion = (e) => {
+        
         if (index < data.length) {
             if (radioValue === data[index].correct_answer) {
-                setScore(prevScore => prevScore+1);
+                setScore(prevScore => prevScore + 1);
             }
             setIndex(prevIndex => prevIndex + 1);
         }
-        else {
+    }
+    function shuffleArray(array) {
+        let i = array.length -1;
+        for(;i>0;i--)
+        {
+            const j = Math.floor(Math.random() * (i+1));
+            const temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+            
         }
     }
 
 
 
     if (status===1) {
+        
         return (
             <h1>Loading....</h1>)
     }
     else if (status === 0 && index < data.length) {
+        const array =[...data[index].incorrect_answers , data[index].correct_answer];
+        shuffleArray(array);
         return (
             <div>
                 <h3>{props.name}</h3>
                 <div>
                     <h4>Category::{data[index].category}</h4>
                     <p>{data[index].question}</p>
-                    <input type="radio" name="options" value={data[index].correct_answer} onChange={(e) => setRadioValue(e.target.value)} />
-                    <label>{data[index].correct_answer}</label><br />
-
-                    {data[index].incorrect_answers.map((option) => {
-                        return <>
-                            <input type="radio" name="options" value={option} onChange={(e) => setRadioValue(e.target.value)}  />
-                            <label>{option}</label><br />
-                        </>
-                    })}
+                    {array.map(option => <><input type="radio" checked={option === radioValue} name="options" value={option} onChange={(e) => setRadioValue(e.target.value)} />{option}<br/></>)}
                     <button onClick={nextQuestion}>Next</button>
                 </div>
             </div>
