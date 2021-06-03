@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Result from './Result';
 import '../css/Test.css'
+import logo from '../images/loading.gif';
+
 const Test = (props) => {
 
     const [data, setData] = useState([]);
@@ -54,7 +56,7 @@ const Test = (props) => {
     if (status===1) {
         
         return (
-            <h1>Loading....</h1>)
+            <img src={logo} className="loading" alt="loading" />)
     }
     else if (status === 0 && index < data.length) {
         const tempArray =[...data[index].incorrect_answers , data[index].correct_answer];
@@ -63,17 +65,25 @@ const Test = (props) => {
         shuffleArray(tempArray);
         setArray(tempArray);
         setShouldShuffle(false);
+        if(data[index].difficulty === 'easy'){
+            setColor("#339933");
+        }
+        else if(data[index].difficulty === 'hard'){
+            setColor("#800000");
+        }
+        else{
+            setColor("#0099ff");
+        }
         }
         return (
             <div>
-                <h3 className="welcomeText">{props.name}</h3>
-                <div>
+                    <legend className="welcomeText">{props.name}</legend>
+                    <progress id="file" value={index} max={data.length - 1} className="progress"/>
                     <legend className="difficulty" style={{background:color}}>{data[index].difficulty.charAt(0).toUpperCase()+data[index].difficulty.slice(1)}</legend>
                     <h4>Category::{data[index].category}</h4>
-                    <p dangerouslySetInnerHTML={createMarkup()}></p>
-                    {array.map(option => <><input type="radio" checked={option.toString() === radioValue} name="options" value={option} onChange={(e) => setRadioValue(e.target.value)} />{option}<br/></>)}
-                    <input type="button" onClick={nextQuestion} value="Next"/>
-                </div>
+                    <p dangerouslySetInnerHTML={createMarkup()} className="question"></p>
+                    {array.map(option => <><label class="radio"><input type="radio" checked={option.toString() === radioValue} name="options" value={option} onChange={(e) => setRadioValue(e.target.value)} /><span className="checkmark">{option}</span></label><br/></>)}
+                    <input type="button" onClick={nextQuestion} value="Next" className="Next"/>
             </div>
         )
     }

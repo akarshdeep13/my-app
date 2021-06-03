@@ -1,7 +1,7 @@
 .form-style{
 	margin: 0 auto;
 	width: 700px;
-	height: 14rem;
+	height: 16.5rem;
 	font-size: 16px;
 	background: #495C70;
 	padding: 30px 30px 15px 30px;
@@ -45,8 +45,8 @@
 	-ms-transform: translateY(-50%);
   transform: translateY(-50%);
   position: absolute;
-  top: 86%;
-  right: 20rem;
+  top: 53%;
+  right: 32rem;
 }
 
 .form-style button:hover{
