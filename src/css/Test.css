@@ -1,10 +1,25 @@
+@import url(https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap);
+
 .welcomeText{
-    
+    position: absolute;
 	font-size: 15px;
-    bottom: 16rem;
+    bottom: 18rem;
     right: 10rem;
-    left: 43em;
+    left: 18rem;
+    font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 16px;
+	color: #fff;
 }
+.question{
+    font-family: 'Odibee Sans';
+    font-size: 22px;
+}
+.category{
+    font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 16px;
+	color: #fff;
+}
+
 .difficulty{
     text-align:center;
     position: absolute;
@@ -22,7 +37,7 @@
 	border: none;
 	padding: 8px 10px 8px 10px;
 	border-radius: 5px;
-	color: #A8BACE;
+	color: #f6f9fc;
 	margin: 0;
 	-ms-transform: translateY(-50%);
     transform: translateY(-50%);

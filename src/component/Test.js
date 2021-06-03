@@ -80,7 +80,7 @@ const Test = (props) => {
                     <legend className="welcomeText">{props.name}</legend>
                     <progress id="file" value={index} max={data.length - 1} className="progress"/>
                     <legend className="difficulty" style={{background:color}}>{data[index].difficulty.charAt(0).toUpperCase()+data[index].difficulty.slice(1)}</legend>
-                    <h4>Category::{data[index].category}</h4>
+                    <p className="category">Category : {data[index].category}</p>
                     <p dangerouslySetInnerHTML={createMarkup()} className="question"></p>
                     {array.map(option => <><label class="container">{option}<input type="radio" checked={option.toString() === radioValue} name="options" value={option} onChange={(e) => setRadioValue(e.target.value)} /><span className="checkmark"></span></label><br/></>)}
                     <input type="button" onClick={nextQuestion} value="Next" className="Next"/>
