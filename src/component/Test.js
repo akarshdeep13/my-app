@@ -6,9 +6,10 @@ const Test = (props) => {
     const [data, setData] = useState([]);
     const [status, setStatus] = useState(1);
     const [radioValue, setRadioValue] = useState('');
-    
+    const [shouldShuffle,setShouldShuffle] = useState(true);
     const [index, setIndex] = useState(0);
     const [score, setScore] = useState(0);
+    const [array,setArray] = useState([]);
     const url = 'https://next.json-generator.com/api/json/get/N1NR3Py5c';
 
 
@@ -30,6 +31,7 @@ const Test = (props) => {
                 setScore(prevScore => prevScore + 1);
             }
             setIndex(prevIndex => prevIndex + 1);
+            setShouldShuffle(true);
         }
     }
     function shuffleArray(array) {
@@ -40,7 +42,6 @@ const Test = (props) => {
             const temp = array[i];
             array[i] = array[j];
             array[j] = temp;
-            
         }
     }
 
@@ -52,8 +53,13 @@ const Test = (props) => {
             <h1>Loading....</h1>)
     }
     else if (status === 0 && index < data.length) {
-        const array =[...data[index].incorrect_answers , data[index].correct_answer];
-        shuffleArray(array);
+        const tempArray =[...data[index].incorrect_answers , data[index].correct_answer];
+        if(shouldShuffle && tempArray)
+        {
+        shuffleArray(tempArray);
+        setArray(tempArray);
+        setShouldShuffle(false);
+        }
         return (
             <div>
                 <h3>{props.name}</h3>
