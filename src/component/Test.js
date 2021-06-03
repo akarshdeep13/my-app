@@ -27,13 +27,16 @@ const Test = (props) => {
     const nextQuestion = (e) => {
         
         if (index < data.length) {
-            if (radioValue === data[index].correct_answer) {
+            if (radioValue === data[index].correct_answer.toString()) {
                 setScore(prevScore => prevScore + 1);
             }
             setIndex(prevIndex => prevIndex + 1);
             setShouldShuffle(true);
         }
     }
+    function createMarkup() {
+        return {__html: data[index].question};
+      }
     function shuffleArray(array) {
         let i = array.length -1;
         for(;i>0;i--)
@@ -65,8 +68,8 @@ const Test = (props) => {
                 <h3>{props.name}</h3>
                 <div>
                     <h4>Category::{data[index].category}</h4>
-                    <p>{data[index].question}</p>
-                    {array.map(option => <><input type="radio" checked={option === radioValue} name="options" value={option} onChange={(e) => setRadioValue(e.target.value)} />{option}<br/></>)}
+                    <p dangerouslySetInnerHTML={createMarkup()}></p>
+                    {array.map(option => <><input type="radio" checked={option.toString() === radioValue} name="options" value={option} onChange={(e) => setRadioValue(e.target.value)} />{option}<br/></>)}
                     <button onClick={nextQuestion}>Next</button>
                 </div>
             </div>

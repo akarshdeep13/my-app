@@ -6,9 +6,9 @@ import logo from '../images/logo.png';
 const SurveyApp = () => {
 	return (
 		<>
-		<h2>Survey App</h2>
+		<h2 className="title">Survey App</h2>
 		<img src={logo} className="App-logo" alt="logo" />
-		<p>Welcome user to Survey</p>
+		<p className="introText">Welcome user to Survey</p>
 			<WelcomePage/>
 		</>
 		)

@@ -1,22 +1,54 @@
-@import url(https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap);
-
-.welcomeForm {
-	margin-left: 280px;
-	background-color: aquamarine;
-	width: 40rem;
-	height: 40rem;
+.form-style{
+	margin: 0 auto;
+	width: 700px;
+	height: 14rem;
+	font-size: 16px;
+	background: #495C70;
+	padding: 30px 30px 15px 30px;
+	border: 5px solid #53687E;
 }
 
-label{
-	font-family: 'Odibee Sans';
-	font-size: 25px;
-	margin-left: 150px;
+.form-style input[type=text],
+.form-style label,
+.form-style button
+{
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 16px;
+	color: #fff;
+
+}
+.form-style label {
+	display:inline-block;
+	margin-bottom: 10px;
+}
+.form-style input[type=text]
+{
+	background: transparent;
+	border: none;
+	border-bottom: 1px dashed #83A4C5;
+	width: 275px;
+	outline: none;
+	padding: 0px 0px 0px 0px;
+	font-style: italic;
+}
+.form-style input[type=text]:focus
+{
+	border-bottom: 1px dashed #D9FFA9;
+}
+.form-style button{
+	background: #576E86;
+	border: none;
+	padding: 8px 10px 8px 10px;
+	border-radius: 5px;
+	color: #A8BACE;
+	margin: 0;
+	-ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  position: absolute;
+  top: 200 rem;
+  right: 20rem;
 }
 
-button{
-	font-family: 'Odibee Sans';
-	font-size: 20px;
-	margin-top: 20px;
-	margin-left: 250px;
-	width: 100px;
+.form-style button:hover{
+	background: #394D61;
 }

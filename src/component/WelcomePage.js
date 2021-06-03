@@ -5,10 +5,11 @@ import FormContainer from './FormContainer';
 const WelcomePage = () => {
 
 		return(
-			<div className="welcomeForm">
-				
+			<div className="form-style">
+				<form>
 				<FormContainer/>
-		</div>
+				</form>
+			</div>
 			) 
 }
 
