@@ -1,5 +1,4 @@
 import React, { useState,useEffect } from 'react';
-import '../css/FormContainer.css';
 import Test from './Test';
 
 const FormContainer = () => {
