@@ -10,7 +10,7 @@ const Test = (props) => {
     const [index, setIndex] = useState(0);
     const [score, setScore] = useState(0);
     const [array,setArray] = useState([]);
-    const url = 'https://jsonkeeper.com/b/609F';
+    const url = 'http://www.json-generator.com/api/json/get/cgrZsSDQOa?indent=2';
 
 
     useEffect(() => {
