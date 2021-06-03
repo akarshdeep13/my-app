@@ -36,7 +36,7 @@ const FormContainer = () => {
 	}
 	return (
 		<div>
-			<label> Name : </label>
+			<span> Name : </span>
 			<input type="text" placeholder=" eg John" value={userName} onChange={(e) => setUserName(e.target.value)} /><br />
 			<button onClick={proceed}> Let's Begin </button>
 		</div>
