@@ -10,7 +10,7 @@ const Test = (props) => {
     const [index, setIndex] = useState(0);
     const [score, setScore] = useState(0);
     const [array,setArray] = useState([]);
-    const url = 'https://next.json-generator.com/api/json/get/N1NR3Py5c';
+    const url = 'https://jsonkeeper.com/b/609F';
 
 
     useEffect(() => {
@@ -47,6 +47,7 @@ const Test = (props) => {
             array[j] = temp;
         }
     }
+    const [color,setColor] = useState('red');
 
 
 
@@ -65,12 +66,13 @@ const Test = (props) => {
         }
         return (
             <div>
-                <h3>{props.name}</h3>
+                <h3 className="welcomeText">{props.name}</h3>
                 <div>
+                    <legend className="difficulty" style={{background:color}}>{data[index].difficulty.charAt(0).toUpperCase()+data[index].difficulty.slice(1)}</legend>
                     <h4>Category::{data[index].category}</h4>
                     <p dangerouslySetInnerHTML={createMarkup()}></p>
                     {array.map(option => <><input type="radio" checked={option.toString() === radioValue} name="options" value={option} onChange={(e) => setRadioValue(e.target.value)} />{option}<br/></>)}
-                    <button onClick={nextQuestion}>Next</button>
+                    <input type="button" onClick={nextQuestion} value="Next"/>
                 </div>
             </div>
         )

@@ -1,5 +1,10 @@
-div.p {
-    font-family: 'Odibee Sans';
-    font-size: 25px;
-    margin-left: inherit;
+.welcomeText{
+    margin-top: -20 rem;
+    text-align:left;
+	font-size: 15px;
+}
+.difficulty{
+    text-align:right;
+    float: right;
+    color: #fff;
 }
