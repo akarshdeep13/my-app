@@ -49,3 +49,15 @@
 .form-style button:hover{
 	background: #394D61;
 }
+.error{
+font-family: Georgia, "Times New Roman", Times, serif;
+font-size: 26px;
+position: absolute;
+top: 63%;
+right: 46rem;
+background: #a8084b;
+color: #ebeff3;
+border-radius: 5px;
+text-align: center;
+width: 15rem;
+}
