@@ -12,6 +12,7 @@ const Test = (props) => {
     const [index, setIndex] = useState(0);
     const [score, setScore] = useState(0);
     const [array,setArray] = useState([]);
+    const [color,setColor] = useState('red');
     const url = 'http://www.json-generator.com/api/json/get/cgrZsSDQOa?indent=2';
 
 
@@ -49,7 +50,6 @@ const Test = (props) => {
             array[j] = temp;
         }
     }
-    const [color,setColor] = useState('red');
 
 
 
