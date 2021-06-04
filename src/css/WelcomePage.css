@@ -9,7 +9,8 @@
 }
 
 .form-style input[type=text],
-.form-style button
+.form-style button,
+.enterName
 {
 	font-family: Georgia, "Times New Roman", Times, serif;
 	font-size: 16px;
@@ -36,7 +37,7 @@
 	border: none;
 	padding: 8px 10px 8px 10px;
 	border-radius: 5px;
-	color: #A8BACE;
+	color: #ebeff3;
 	margin: 0;
 	-ms-transform: translateY(-50%);
   transform: translateY(-50%);

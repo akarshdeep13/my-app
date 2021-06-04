@@ -1,9 +1,10 @@
 import React from 'react';
+import '../css/Result.css'
 
 const Result = (props) => {
     return <>
-        <h1>Test Completed </h1>
-        <h4> Your Score = {props.yourScore}/{props.total}</h4>
+        <p className="completed">Test Completed </p>
+        <legend className="score">{props.yourScore}/{props.total}</legend>
       </>
 }
 export default Result;

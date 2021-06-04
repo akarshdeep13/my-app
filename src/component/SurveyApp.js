@@ -8,7 +8,7 @@ const SurveyApp = () => {
 		<>
 		<img src={logo} className="App-logo" alt="logo" />
 		<h2 className="title">Quiz App</h2>
-		<p className="introText">Welcome user, Let's Play Quiz</p>
+		<p className="introText">This is template developed for Quiz app by Akarsh Deep, The questions are fetched via a API. </p>
 			<WelcomePage/>
 		</>
 		)

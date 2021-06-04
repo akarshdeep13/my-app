@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import Test from './Test';
+import '../css/WelcomePage.css'
 
 const FormContainer = () => {
 	const [userName, setUserName] = useState('');
@@ -36,7 +37,7 @@ const FormContainer = () => {
 	}
 	return (
 		<div>
-			<span> Name : </span>
+			<span className="enterName"> Name : </span>
 			<input type="text" placeholder=" eg John" value={userName} onChange={(e) => setUserName(e.target.value)} /><br />
 			<button onClick={proceed}> Let's Begin </button>
 		</div>
