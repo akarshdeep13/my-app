@@ -1,0 +1,35 @@
+@import url(https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap);
+
+.completed{
+    position: absolute;
+    bottom: 15rem;
+    right: 19rem;
+    left: 35rem;
+    font-family: 'Odibee Sans';
+	font-size: 25px;
+	color: #fff;
+}
+
+.score{
+    position: absolute;
+    bottom: 9rem;
+    right: 19rem;
+    left: 35rem;
+    font-family: 'Odibee Sans';
+	font-size: 75px;
+	color: #fff;
+}
+
+.status{
+    position: absolute;
+    bottom: 9rem;
+    right: 1rem;
+    left: 49rem;
+    font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 25px;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    width: 75px;
+    height: 30px;
+}

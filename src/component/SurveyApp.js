@@ -5,13 +5,14 @@ import logo from '../images/logo.png';
 
 const SurveyApp = () => {
 	return (
-		<div>
-		<h2>Survey App</h2>
+		<>
 		<img src={logo} className="App-logo" alt="logo" />
-		<p>Welcome user to Survey</p>
-		<WelcomePage/>
-		</div>
+		<h2 className="title">Quiz App</h2>
+		<p className="introText">This is template developed for Quiz app by Akarsh Deep, The questions are fetched via a API. </p>
+			<WelcomePage/>
+		</>
 		)
 }
+
 
 export default SurveyApp;

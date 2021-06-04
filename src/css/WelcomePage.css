@@ -1,21 +1,63 @@
-@import url(https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap);
-
-.welcomeForm {
-	margin-left: 280px;
-	background-color: aquamarine;
-	width: 50%;
+.form-style{
+	margin: 0 auto;
+	width: 700px;
+	height: 16.5rem;
+	font-size: 16px;
+	background: #495C70;
+	padding: 30px 30px 15px 30px;
+	border: 5px solid #53687E;
 }
 
-label{
-	font-family: 'Odibee Sans';
-	font-size: 25px;
-	margin-left: 150px;
+.form-style input[type=text],
+.form-style button,
+.enterName
+{
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 16px;
+	color: #fff;
+
 }
 
-button{
-	font-family: 'Odibee Sans';
-	font-size: 20px;
-	margin-top: 20px;
-	margin-left: 250px;
-	width: 100px;
+.form-style input[type=text]
+{
+	background: transparent;
+	border: none;
+	border-bottom: 1px dashed #83A4C5;
+	width: 275px;
+	outline: none;
+	padding: 0px 0px 0px 0px;
+	font-style: italic;
+}
+.form-style input[type=text]:focus
+{
+	border-bottom: 1px dashed #D9FFA9;
+}
+.form-style button{
+	background: #576E86;
+	border: none;
+	padding: 8px 10px 8px 10px;
+	border-radius: 5px;
+	color: #ebeff3;
+	margin: 0;
+	-ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  position: absolute;
+  top: 53%;
+  right: 32rem;
+}
+
+.form-style button:hover{
+	background: #394D61;
+}
+.error{
+font-family: Georgia, "Times New Roman", Times, serif;
+font-size: 26px;
+position: absolute;
+top: 63%;
+right: 46rem;
+background: #a8084b;
+color: #ebeff3;
+border-radius: 5px;
+text-align: center;
+width: 15rem;
 }
