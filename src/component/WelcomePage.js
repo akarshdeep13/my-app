@@ -6,9 +6,7 @@ const WelcomePage = () => {
 
 		return(
 			<div className="form-style">
-				<form>
 				<FormContainer/>
-				</form>
 			</div>
 			) 
 }

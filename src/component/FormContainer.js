@@ -1,4 +1,5 @@
 import React, { useState,useEffect } from 'react';
+import ReactDOM from 'react-dom';
 import Test from './Test';
 import '../css/WelcomePage.css'
 
@@ -7,6 +8,8 @@ const FormContainer = () => {
 	const [name, setName] = useState('');
 	const [error, setError] = useState('');
 	const [test, setTest] = useState(false);
+	const [showModal, setModal] = useState(false);
+
 
 
 
@@ -25,6 +28,7 @@ const FormContainer = () => {
 			setTimeout(()=>{
 			setError('');
 			},2000)
+			setModal(true);
 			return
 		}
 		setName('Hi ' + userName);
@@ -32,11 +36,12 @@ const FormContainer = () => {
 
 	}
 
+	
+
 
 	if (test) {
-		return (<>
+		return (
 			<Test name={name}/>
-			</>
 		)
 	}
 	return (
@@ -45,10 +50,19 @@ const FormContainer = () => {
 			<input type="text" placeholder=" eg John" value={userName} onChange={(e) => setUserName(e.target.value)} /><br />
 			<button onClick={proceed}> Let's Begin </button>
 			<article className="error"> {error} </article>
+			{showModal && <Prompt toggle={(value)=> setModal(value) }/>}
 		</div>
 	)
 }
 
-
+const Prompt = ({toggle}) => {
+	return ReactDOM.createPortal(<div className="modal">
+	<div className="modal-content">
+	<span className="close" onClick={()=>toggle(false)}>&times;</span>
+	<p>portal</p>
+	<button>gju</button>
+	</div>
+	</div>,document.getElementById('portal'));
+}
 
 export default FormContainer;
