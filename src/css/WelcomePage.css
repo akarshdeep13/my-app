@@ -98,3 +98,10 @@ width: 15rem;
 	text-decoration: none;
 	cursor: pointer;
   }
+  
+  .modal-message{
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 16px;
+	color: rgb(22, 22, 22);
+
+}

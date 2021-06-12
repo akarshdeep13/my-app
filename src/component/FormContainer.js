@@ -59,8 +59,7 @@ const Prompt = ({toggle}) => {
 	return ReactDOM.createPortal(<div className="modal">
 	<div className="modal-content">
 	<span className="close" onClick={()=>toggle(false)}>&times;</span>
-	<p>portal</p>
-	<button>gju</button>
+	<p className="modal-message">Please enter username to proceed!</p>
 	</div>
 	</div>,document.getElementById('portal'));
 }
