@@ -50,6 +50,7 @@
 	background: #394D61;
 }
 .error{
+display: none;
 font-family: Georgia, "Times New Roman", Times, serif;
 font-size: 26px;
 position: fixed;
