@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Result from './Result';
+import ReactDOM from 'react-dom';
 import '../css/Test.css'
 import logo from '../images/loading.gif';
 
@@ -13,6 +14,8 @@ const Test = (props) => {
     const [score, setScore] = useState(0);
     const [array,setArray] = useState([]);
     const [color,setColor] = useState('red');
+    const [showModal, setModal] = useState(false);
+    const [result, setResult] = useState(false);
     const url = 'https://www.json-generator.com/api/json/get/cftWfSJxAi?indent=2';
 
 
@@ -28,7 +31,7 @@ const Test = (props) => {
     }
 
     const nextQuestion = (e) => {
-        
+        if(index+1 !== data.length){
         if (index < data.length) {
             if (radioValue === data[index].correct_answer.toString()) {
                 setScore(prevScore => prevScore + 1);
@@ -36,6 +39,17 @@ const Test = (props) => {
             setIndex(prevIndex => prevIndex + 1);
             setShouldShuffle(true);
         }
+    }
+    else{
+        setModal(true);
+        if(result)
+        {
+            if (radioValue === data[index].correct_answer.toString()) {
+                setScore(prevScore => prevScore + 1);
+            }
+            setIndex(prevIndex => prevIndex + 1);
+        }
+    }
     }
     function createMarkup() {
         return {__html: data[index].question};
@@ -82,8 +96,9 @@ const Test = (props) => {
                     <legend className="difficulty" style={{background:color}}>{data[index].difficulty.charAt(0).toUpperCase()+data[index].difficulty.slice(1)}</legend>
                     <p className="category">Category : {data[index].category}</p>
                     <p dangerouslySetInnerHTML={createMarkup()} className="question"></p>
-                    {array.map(option => <><label class="container">{option}<input type="radio" checked={option.toString() === radioValue} name="options" value={option} onChange={(e) => setRadioValue(e.target.value)} /><span className="checkmark"></span></label><br/></>)}
+                    {array.map(option => <><label className="container">{option}<input type="radio" checked={option.toString() === radioValue} name="options" value={option} onChange={(e) => setRadioValue(e.target.value)} /><span className="checkmark"></span></label><br/></>)}
                     <input type="button" onClick={nextQuestion} value="Next" className="Next"/>
+                    {showModal && <Prompt toggle={(value)=> setModal(value) } result={(stat)=>{ setResult(stat); setModal(false)}}/>}
             </div>
         )
     }
@@ -91,6 +106,17 @@ const Test = (props) => {
         return <Result total={data.length} yourScore={score}/>
     }
     
+}
+
+const Prompt = ({toggle,result}) => {
+	return ReactDOM.createPortal(<div className="modal">
+	<div className="modal-content">
+	<span className="close" onClick={()=>toggle(false)}>&times;</span>
+	<p className="modal-message">Do you want to submit the test!</p>
+    <button onClick={()=>toggle(false)}>No</button>
+    <button onClick={()=>result(true)}>Yes</button>
+	</div>
+	</div>,document.getElementById('portal'));
 }
 
 
