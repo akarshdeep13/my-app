@@ -61,6 +61,14 @@
   left: 53em;
 }
 
+.prog{
+  position: absolute;
+  bottom: 18rem;
+  right: 10rem;
+  left: 53em;
+  color: #f6f9fc;
+  font-family: 'Odibee Sans';
+}
 
 /* The container */
 .container {

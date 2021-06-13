@@ -15,7 +15,6 @@ const Test = (props) => {
     const [array,setArray] = useState([]);
     const [color,setColor] = useState('red');
     const [showModal, setModal] = useState(false);
-    const [result, setResult] = useState(false);
     const url = 'https://www.json-generator.com/api/json/get/cftWfSJxAi?indent=2';
 
 
@@ -42,13 +41,6 @@ const Test = (props) => {
     }
     else{
         setModal(true);
-        if(result)
-        {
-            if (radioValue === data[index].correct_answer.toString()) {
-                setScore(prevScore => prevScore + 1);
-            }
-            setIndex(prevIndex => prevIndex + 1);
-        }
     }
     }
     function createMarkup() {
@@ -91,14 +83,21 @@ const Test = (props) => {
         }
         return (
             <div>
-                    <legend className="welcomeText">{props.name}</legend>
+                    <p className="welcomeText">{props.name}</p>
+                    <p className="prog">{index+1}/{data.length}</p>
                     <progress id="file" value={index} max={data.length - 1} className="progress"/>
                     <legend className="difficulty" style={{background:color}}>{data[index].difficulty.charAt(0).toUpperCase()+data[index].difficulty.slice(1)}</legend>
                     <p className="category">Category : {data[index].category}</p>
                     <p dangerouslySetInnerHTML={createMarkup()} className="question"></p>
                     {array.map(option => <><label className="container">{option}<input type="radio" checked={option.toString() === radioValue} name="options" value={option} onChange={(e) => setRadioValue(e.target.value)} /><span className="checkmark"></span></label><br/></>)}
                     <input type="button" onClick={nextQuestion} value="Next" className="Next"/>
-                    {showModal && <Prompt toggle={(value)=> setModal(value) } result={(stat)=>{ setResult(stat); setModal(false)}}/>}
+                    {showModal && <Prompt toggle={(value)=> setModal(value) } result={()=>{ 
+                        setModal(false);
+                        if (radioValue === data[index].correct_answer.toString()) {
+                            setScore(prevScore => prevScore + 1);
+                        }
+                        setIndex(prevIndex => prevIndex + 1);
+                    }}/>}
             </div>
         )
     }
@@ -114,7 +113,7 @@ const Prompt = ({toggle,result}) => {
 	<span className="close" onClick={()=>toggle(false)}>&times;</span>
 	<p className="modal-message">Do you want to submit the test!</p>
     <button onClick={()=>toggle(false)}>No</button>
-    <button onClick={()=>result(true)}>Yes</button>
+    <button onClick={()=>result()}>Yes</button>
 	</div>
 	</div>,document.getElementById('portal'));
 }
