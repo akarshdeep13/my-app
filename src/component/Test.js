@@ -112,8 +112,8 @@ const Prompt = ({toggle,result}) => {
 	<div className="modal-content">
 	<span className="close" onClick={()=>toggle(false)}>&times;</span>
 	<p className="modal-message">Do you want to submit the test!</p>
-    <button onClick={()=>toggle(false)}>No</button>
-    <button onClick={()=>result()}>Yes</button>
+    <button onClick={()=>toggle(false)} className="modal-button-no">No</button>
+    <button onClick={()=>result()} className="modal-button-yes">Yes</button>
 	</div>
 	</div>,document.getElementById('portal'));
 }

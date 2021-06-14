@@ -166,3 +166,28 @@
 	color: rgb(22, 22, 22);
 
 }
+.modal-button-yes{
+  margin: 5px;
+  border: none;
+  background: #055a3e;
+	border-radius: 5px;
+  width: 60px;
+	color: #f6f9fc;
+}
+.modal-button-yes:hover{
+	background: #394D61;
+  cursor: pointer;
+}
+
+.modal-button-no{
+  margin: 5px;
+  border: none;
+  background: #72042e;
+	border-radius: 5px;
+	color: #f6f9fc;
+  width: 60px;
+}
+.modal-button-no:hover{
+	background: #394D61;
+  cursor: pointer;
+}

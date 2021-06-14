@@ -5,10 +5,10 @@ const Result = (props) => {
 
 
 
-    return <>
-        <p className="completed">Test Completed </p>
+    return <div className="form-style">
+        <p align="center" className="completed">Test Completed </p>
 {/*<p className="status" style={{background:color}}>{resultStatus}</p>*/}
-        <legend className="score">{props.yourScore}/{props.total}</legend>
-      </>
+        <p align="center" className="score">{props.yourScore}/{props.total}</p>
+      </div>
 }
 export default Result;
