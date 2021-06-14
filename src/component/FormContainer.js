@@ -45,9 +45,9 @@ const FormContainer = () => {
 		)
 	}
 	return (
-		<div>
+		<div className='form-style'>
 			<span className="enterName"> Name : </span>
-			<input type="text" placeholder=" eg John" value={userName} onChange={(e) => setUserName(e.target.value)} /><br />
+			<input type="text" placeholder=" eg John" value={userName} onChange={(e) => setUserName(e.target.value)} />
 			<button onClick={proceed}> Let's Begin </button>
 			<article className="error"> {error} </article>
 			{showModal && <Prompt toggle={(value)=> setModal(value) }/>}

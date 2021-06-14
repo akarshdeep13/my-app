@@ -1,12 +1,9 @@
 @import url(https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap);
 
 .welcomeText{
-    position: absolute;
 	font-size: 15px;
-    bottom: 18rem;
-    right: 10rem;
-    left: 18rem;
-    font-family: Georgia, "Times New Roman", Times, serif;
+  padding: 0px 0px 0px 0px;
+  font-family: Georgia, "Times New Roman", Times, serif;
 	font-size: 16px;
 	color: #fff;
 }
@@ -22,27 +19,22 @@
 
 .difficulty{
     text-align:center;
-    position: absolute;
-    bottom: 16rem;
-    right: 10rem;
-    left: 53em;
+    float: right;
     color: #fff;
     border-radius: 5px;
     width: 75px;
 }
 
 .Next{
-    display: block;
 	background: #576E86;
 	border: none;
 	padding: 8px 10px 8px 10px;
 	border-radius: 5px;
 	color: #f6f9fc;
-	margin: 0;
+	margin: auto;
 	-ms-transform: translateY(-50%);
     transform: translateY(-50%);
     position: absolute;
-    top: 92%;
     right: 20rem;
     width: 80px;
 }
@@ -55,19 +47,15 @@
   margin-right: auto;
 }
 .progress{
-  position: absolute;
-  bottom: 18rem;
-  right: 10rem;
-  left: 53em;
+  float: right;
 }
 
 .prog{
-  position: absolute;
-  bottom: 18rem;
-  right: 10rem;
-  left: 53em;
+  display: -ms-flexbox;
   color: #f6f9fc;
   font-family: 'Odibee Sans';
+  font-size: 15px;
+  padding: 0px 130px 0px 0px;
 }
 
 /* The container */

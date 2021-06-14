@@ -1,12 +1,19 @@
+.flex-container{
+	display: flex;
+	flex-flow: row wrap;
+	flex-direction: row;
+	justify-content: space-evenly;
+	padding: 0.5em;
+}
 .form-style{
-	margin: 0 auto;
-	width: 700px;
-	height: 16.5rem;
+	margin: auto;
+	width: 800px;
+	height: 22rem;
 	font-size: 16px;
 	background: #495C70;
-	padding: 30px 30px 15px 30px;
 	border: 5px solid #53687E;
 }
+
 
 .form-style input[type=text],
 .form-style button,
@@ -25,7 +32,7 @@
 	border-bottom: 1px dashed #83A4C5;
 	width: 275px;
 	outline: none;
-	padding: 0px 0px 0px 0px;
+	padding: 10px 20px 0px 0px;
 	font-style: italic;
 }
 .form-style input[type=text]:focus
@@ -38,12 +45,8 @@
 	padding: 8px 10px 8px 10px;
 	border-radius: 5px;
 	color: #ebeff3;
-	margin: 0;
-	-ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  position: fixed;
-  top: 53%;
-  right: 32rem;
+	align-self: center;
+  
 }
 
 .form-style button:hover{

@@ -5,7 +5,7 @@ import FormContainer from './FormContainer';
 const WelcomePage = () => {
 
 		return(
-			<div className="form-style">
+			<div className="flex-container">
 				<FormContainer/>
 			</div>
 			) 
